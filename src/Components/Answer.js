@@ -1,10 +1,10 @@
 import React from 'react';
-
+import '../style/answer.css'
 const Answer = () => {
 
     return(
         <div className="answer">
-            a
+            
         </div>
     )
 }

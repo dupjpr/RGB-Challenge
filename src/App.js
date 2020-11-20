@@ -4,6 +4,7 @@ import Section from './Components/Section';
 import Score from './Components/Score';
 import Quest from './Components/Quest';
 import Answer from './Components/Answer';
+import './style/app.css';
 
 function App() {
   return (
@@ -13,17 +14,13 @@ function App() {
          <Score/>
          <Quest/>
          <div className="contenedor">
-         <Answer/>
-         <Answer/>
-         <Answer/>
-
+            <Answer/>
+            <Answer/>
+            <Answer/>
          </div>
       </Section>
       
     </Fragment>
-
-   
-
   );
 }
 

@@ -1,0 +1,16 @@
+.section{
+    background-color: #162840;
+    color: whitesmoke;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.section p{
+    position: absolute;
+    top: 0;
+    margin-top: 3%;
+}

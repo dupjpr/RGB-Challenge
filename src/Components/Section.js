@@ -1,4 +1,5 @@
 import React from 'react';
+import '../style/section.css'
 
 const Section = ({children}) => {
     
