@@ -11,13 +11,11 @@ function App() {
     <Fragment>
       <Header />
       <Section>
-         <Score/>
-         <Quest/>
-         <div className="contenedor">
-            <Answer/>
-            <Answer/>
-            <Answer/>
-         </div>
+          <Score/>
+          <Quest/>
+          <Answer/>
+         
+       
       </Section>
       
     </Fragment>
