@@ -16,9 +16,21 @@ const Answer = ({firstColor, secondColor, thirdColor}) => {
     return(
         <Fragment>
             <div className="answer">
-                <div className="answerOne" style={{backgroundColor: `rgb(${firstR}, ${firstG}, ${firstB})` }}></div>
-                <div className="answerTwo" style={{backgroundColor: `rgb(${secondR}, ${secondG}, ${secondB})` }}></div>
-                <div className="answerThree" style={{backgroundColor: `rgb(${thirdR}, ${thirdG}, ${thirdB})` }}></div>
+                <div 
+                    className="answerOne" 
+                    style={{backgroundColor: `rgb(${firstR}, ${firstG}, ${firstB})` }}>
+
+                </div>
+                <div 
+                    className="answerTwo" 
+                    style={{backgroundColor: `rgb(${secondR}, ${secondG}, ${secondB})` }}>
+
+                </div>
+                <div 
+                    className="answerThree" 
+                    style={{backgroundColor: `rgb(${thirdR}, ${thirdG}, ${thirdB})` }}>
+
+                </div>
             </div>
         </Fragment>
 

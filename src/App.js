@@ -22,19 +22,15 @@ function App() {
   const colorSet = [];
 
   for (let i = 0; i < 3; i++){
-      const item = color();
-      colorSet.push(item);
+    const item = color();
+    colorSet.push(item);
   }
 
   const [one, two, three] = colorSet;
 
-  const rgbQuestGenerate = () =>{
-    
-    return colorSet[Math.floor(Math.random() * colorSet.length)]
-  }
-
-  const rgbQuest = rgbQuestGenerate();
-  const {r,g,b} = rgbQuest;
+  const rgbQuestGenerate = () => colorSet[Math.floor(Math.random() * colorSet.length)];
+  
+  const {r,g,b} = rgbQuestGenerate();
 
   return (
     <Fragment>
