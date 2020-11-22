@@ -1,22 +1,9 @@
 import React from 'react';
 
-const Quest = () => {
-
-    // const rgbColor = {};
-
-    // const color = () => {
-    //     const colorNum = 255;
-    //     rgbColor.r = Math.floor(Math.random() * colorNum);
-    //     rgbColor.g = Math.floor(Math.random() * colorNum);
-    //     rgbColor.b = Math.floor(Math.random() * colorNum);
-    // }
-    // color();
-    // console.log(rgbColor)
-   
-    
+const Quest = ({r,g,b}) => {
 
     return(
-        <span>rgb( #,#,# )</span>
+        <span>rgb( {r},{g},{b} )</span>
     )
 };
 
