@@ -1,10 +1,11 @@
 import React from 'react';
 
-const Quest = ({r,g,b}) => {
-
+const Quest = () => {
+    
     return(
-        <span>rgb( {r} , {g} , {b} )</span>
+        <span>rgb( # , # , # )</span>
     )
+    
 };
 
 export default Quest;
