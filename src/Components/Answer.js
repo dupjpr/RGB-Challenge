@@ -1,44 +1,23 @@
-import React, { Fragment } from 'react';
+import React, { Fragment} from 'react';
 import '../style/answer.css'
-const Answer = () => {
-   
-    const color = () => {
-        
-        const rgbColor = {};
-        
-        const random = () => {
-            const colorNum = 255;
-            return Math.floor(Math.random() * colorNum);
+const Answer = ({colorSet,answer,setAnswer}) => {
+    
+    const [one,two,three] = colorSet;
+    
+    // console.log(one);
+    // console.log(two);
+    // console.log(three);
+    
+    const handleClick = (e) =>{
+
+        if (e.target.classList[0] === "answerOne"){
+            setAnswer('one');
+        } else if (e.target.classList[0] === "answerTwo") {
+            setAnswer('two');
+        } else {
+            setAnswer('three');
         }
-
-        rgbColor.r = random();
-        rgbColor.g = random();
-        rgbColor.b = random();
-    
-        return rgbColor;    
-
     }
-
-    const colorSet = [];
-
-    for (let i = 0; i < 3; i++){
-        const id = ['one', 'two', 'three'];
-        const item = color();
-        item.id = id[i];
-        colorSet.push(item);
-    }
-
-    const [one, two, three] = colorSet;
-
-    
-    const validation = (e) =>{
-        
-        console.log('leyendo')
-    }
-
-
-
-
 
     return(
         <Fragment>
@@ -46,25 +25,26 @@ const Answer = () => {
                 <div 
                     className="answerOne" 
                     style={{backgroundColor: `rgb(${one.r}, ${one.g}, ${one.b})` }}
-                    onClick={validation}
+                    onClick={handleClick}
                     >
                 </div>
                 <div 
                     className="answerTwo" 
-                    // style={{backgroundColor: `rgb(${secondR}, ${secondG}, ${secondB})` }}
-                    // onClick={validation}
+                    style={{backgroundColor: `rgb(${two.r}, ${two.g}, ${two.b})` }}
+                    onClick={handleClick}
                     >
                 </div>
                 <div 
                     className="answerThree" 
-                    // style={{backgroundColor: `rgb(${thirdR}, ${thirdG}, ${thirdB})` }}
-                    // onClick={validation}
+                    style={{backgroundColor: `rgb(${three.r}, ${three.g}, ${three.b})` }}
+                    onClick={handleClick}
                     >
                 </div>
+                
             </div>
         </Fragment>
 
     )
 }
 
-export default Answer;
+export default Answer ;
