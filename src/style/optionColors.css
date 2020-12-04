@@ -1,4 +1,4 @@
-.answer{
+.OptionColors{
     width: 30%;
     margin-top: 20%;
     display: flex;
@@ -8,7 +8,7 @@
 
 }
 
-.answer div{
+.OptionColors div{
     width: 100px;
     height: 100px;
     border-radius: 50%;
