@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React, {Fragment, useState} from 'react';
 import Header from './Components/Header';
 import Section from './Components/Section';
 
@@ -25,29 +25,35 @@ function App() {
 
   }
 
-  const colorSet = [];
-  
-  for (let i = 0; i < 3; i++){
-      const id = ['one', 'two', 'three'];
-      const item = color();
-      item.id = id[i];
-      colorSet.push(item);
-    }
+  const colorSet = {
+    color1: color(),
+    color2: color(),
+    color3: color()
+  };
 
   // se genera el color de la pregunta
 
-  const rgbQuestGenerate = () =>{
-    return colorSet[Math.floor(Math.random() * colorSet.length)]
+  const mainColorGenerator = () =>{
+    const colorSelected = Object.values(colorSet); 
+    return colorSelected[Math.floor(Math.random() * colorSelected.length)]
   }
+  
+  const mainColor = mainColorGenerator();
 
-  const rgbQuest = rgbQuestGenerate();
+  // Score and play egain
+
+  const [counter, setCounter] = useState(0);
+  const [message, setMessage] = useState('');
+  console.log(message)
 
   return (
     <Fragment>
       <Header />
       <Section 
-        rgbQuest={rgbQuest} 
+        mainColor={mainColor} 
         colorSet = {colorSet}
+        state = {[counter, setCounter]}
+        stateM = {[message, setMessage]}
       />     
     </Fragment>
   );

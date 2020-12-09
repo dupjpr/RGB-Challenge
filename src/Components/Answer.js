@@ -1,43 +1,42 @@
-import React, { Fragment} from 'react';
+import React, { Fragment } from 'react';
 import '../style/answer.css'
-const Answer = ({colorSet,answer,setAnswer}) => {
+const Answer = ({ colorSet, trueColor, state, stateM }) => {
     
-    const [one,two,three] = colorSet;
+    const [counter, setCounter] = state;
+    const [message, setMessage] = stateM;
+    const { color1, color2, color3 } = colorSet;
     
-    // console.log(one);
-    // console.log(two);
-    // console.log(three);
-    
-    const handleClick = (e) =>{
+    const handleClick = ( e, color) =>{
 
-        if (e.target.classList[0] === "answerOne"){
-            setAnswer('one');
-        } else if (e.target.classList[0] === "answerTwo") {
-            setAnswer('two');
-        } else {
-            setAnswer('three');
-        }
+        const setColor = Object.values(color);
+        const setTrue = Object.values(trueColor);
+        const similar = setColor.filter((val, index) => val === setTrue[index]);
+
+        similar.length === 3 ? setCounter(counter + 5) : setCounter(counter - 1);
+        
+        similar.length === 3 ? setMessage('Correct plus 5 points!') : setMessage('Wrong less 1 point!');
     }
-
+    
+    
     return(
         <Fragment>
             <div className="answer">
                 <div 
                     className="answerOne" 
-                    style={{backgroundColor: `rgb(${one.r}, ${one.g}, ${one.b})` }}
-                    onClick={handleClick}
+                    style={{backgroundColor: `rgb( ${color1.r}, ${color1.g}, ${color1.b} )` }}
+                    onClick={(e) => handleClick (e, color1)}
                     >
                 </div>
                 <div 
                     className="answerTwo" 
-                    style={{backgroundColor: `rgb(${two.r}, ${two.g}, ${two.b})` }}
-                    onClick={handleClick}
+                    style={{backgroundColor: `rgb(${color2.r}, ${color2.g}, ${color2.b})` }}
+                    onClick={(e) => handleClick (e, color2)}
                     >
                 </div>
                 <div 
                     className="answerThree" 
-                    style={{backgroundColor: `rgb(${three.r}, ${three.g}, ${three.b})` }}
-                    onClick={handleClick}
+                    style={{backgroundColor: `rgb(${color3.r}, ${color3.g}, ${color3.b})` }}
+                    onClick={(e) => handleClick (e, color3)}
                     >
                 </div>
                 

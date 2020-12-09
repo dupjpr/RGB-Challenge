@@ -3,32 +3,30 @@ import Score from './Score.js';
 import Quest from './Quest.js';
 import Answer from './Answer.js';
 import '../style/section.css'
+import Message from './Message.jsx';
 
-const Section = ({colorSet, rgbQuest}) => {
+const Section = ({ colorSet, mainColor, state, stateM }) => {
     
-    // user answer
+    const [counter] = state;
+    const [message] = stateM;
 
-    const [answer,setAnswer] = useState('answer');
-    
-    // validation of answer
-
-    const {id} = rgbQuest;
-    const valid = answer === id ? true : false;
+  
 
     return(
         <section className="section">
           
-        <Score valid={valid}/>
+            <Score counter={counter}/>
 
-        <Quest 
-            rgbQuest={rgbQuest}
-            
-        />
-        <Answer 
-            colorSet={colorSet}
-            answer={answer}
-            setAnswer={setAnswer}
-        />
+            <Quest mainColor={mainColor} />
+
+            <Message message={message}/>
+
+            <Answer 
+                colorSet={colorSet}
+                trueColor={mainColor}
+                state={state}
+                stateM={stateM}
+            />
 
         </section>
     );
